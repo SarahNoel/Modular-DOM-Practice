@@ -34,11 +34,34 @@ function consoleLogEvent(type, targetElement){
 consoleLogEvent("click", targetLi[0]);
 consoleLogEvent("mouseover", targetLi[1]);
 
-// //create random hexidecimal color
-// var letters = ["A", "B", "C", "D", "E", "F"]
-// var numbers = [0,1,2,3,4,5,6,7,8,9]
+create random hexidecimal color
 
-// function randomColor(){
-//   var str = '#';
 
-// }
+
+var lettersNumbers = ["A", "B", "C", "D", "E", "F", 0,1,2,3,4,5,6,7,8,9];
+
+function randomColor(arr){
+  var color = [];
+  var str = '#';
+  for (var i = 0; i < 6; i++) {
+    var num = Math.floor(Math.random() * arr.length);
+    color.push(arr.splice(num,1)[0]);
+}
+    var strColor = color.toString();
+    var newColor = str + strColor;
+    var hexColor = newColor.replace(/\,/g,"");
+    return hexColor;
+    }
+  console.log(randomColor(lettersNumbers));
+
+
+
+
+
+
+
+
+
+
+
+
